@@ -1,0 +1,9 @@
+project: savantenvs/https_dns_proxy
+target: dns_truncate
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/dns_truncate/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_dns_truncate
+    libfuzzer: true
+    timeout: 10

@@ -1,0 +1,9 @@
+project: savantenvs/https_dns_proxy
+target: dns_tcp_listener
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/dns_tcp_listener/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_dns_tcp_listener
+    libfuzzer: true
+    timeout: 10

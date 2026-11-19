@@ -1,0 +1,9 @@
+project: savantenvs/https_dns_proxy
+target: dns_poller
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/dns_poller/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_dns_poller
+    libfuzzer: true
+    timeout: 10
